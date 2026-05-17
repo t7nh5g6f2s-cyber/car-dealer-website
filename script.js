@@ -6,11 +6,8 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
-// ナビリンクをクリックしたらメニューを閉じる
 navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-  });
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
 // スムーズスクロール
@@ -21,26 +18,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
-      const offset = 70;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      const top = target.getBoundingClientRect().top + window.scrollY - 68;
       window.scrollTo({ top, behavior: 'smooth' });
     }
   });
 });
 
-// スクロール時のフェードイン
+// スクロールフェードイン
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+  entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.car-card, .contact-card, .feature-item').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  observer.observe(el);
-});
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));

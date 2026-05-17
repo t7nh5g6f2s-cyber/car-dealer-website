@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>サービス詳細 | 株式会社セグチ</title>
+  <meta name="description" content="株式会社セグチのサービス詳細ページ" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="service.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">株式会社<span>セグチ</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#services">サービス案内</a></li>
+        <li><a href="index.html#about">会社案内</a></li>
+        <li><a href="index.html#news">新着情報</a></li>
+        <li><a href="index.html#shaken">車検料金表</a></li>
+        <li><a href="index.html#contact" class="nav-cta">お問い合わせ</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <div class="page-header">
+    <div class="container">
+      <a href="index.html" class="back-link">← ホーム</a>
+      <div class="page-header-title">
+        <h1 id="serviceTitle">読み込み中...</h1>
+        <p id="serviceSubtitle" class="service-subtitle"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DESCRIPTION ===== -->
+  <section class="service-desc-section">
+    <div class="container">
+      <div class="service-desc-inner">
+        <div class="service-description">
+          <h2>サービス概要</h2>
+          <p id="serviceDescription"></p>
+        </div>
+        <div class="service-points" id="servicePoints"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BADGES ===== -->
+  <div class="service-badges-bar" id="serviceBadgesBar" style="display:none">
+    <div class="container">
+      <div class="service-badges" id="serviceBadges"></div>
+    </div>
+  </div>
+
+  <!-- ===== ITEMS GRID ===== -->
+  <section class="service-items-section" id="serviceItemsSection" style="display:none">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"><span>SERVICES</span></div>
+        <h2>対応サービス一覧</h2>
+      </div>
+      <div class="service-items-grid" id="serviceItemsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="service-faq-section" id="serviceFaqSection" style="display:none">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"><span>FAQ</span></div>
+        <h2>よくあるご質問</h2>
+      </div>
+      <div class="faq-list" id="serviceFaqList"></div>
+    </div>
+  </section>
+
+  <!-- ===== TABLE (車検のみ) ===== -->
+  <section class="service-table-section" id="serviceTableSection" style="display:none">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:32px;font-size:1.6rem">料金の目安</h2>
+      <div class="shaken-table-wrap">
+        <table class="shaken-table" id="serviceTable"></table>
+      </div>
+      <p class="shaken-note" id="serviceTableNote" style="text-align:center;margin-top:14px"></p>
+    </div>
+  </section>
+
+  <!-- ===== OTHER SERVICES ===== -->
+  <section class="other-services-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"><span>OTHER SERVICES</span></div>
+        <h2>その他のサービス</h2>
+      </div>
+      <div class="other-services-grid" id="otherServices"></div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="service-cta-section">
+    <div class="container">
+      <div class="service-cta-box">
+        <div>
+          <h2>お気軽にお問い合わせください</h2>
+          <p>ご不明な点やお見積りのご依頼はお電話またはフォームからどうぞ。</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="tel:0774321188" class="btn-primary">📞 0774-32-1188</a>
+          <a href="index.html#contact" class="btn-outline">お問い合わせフォーム</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">株式会社<span>セグチ</span></a>
+          <p>〒611-0013 京都府宇治市莵道西隼上り三番地<br>TEL: 0774-32-1188<br>営業時間: 8:30〜18:00（日祝・第2第4土曜定休）</p>
+        </div>
+        <div class="footer-links">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="index.html#services">サービス案内</a></li>
+            <li><a href="index.html#about">会社案内</a></li>
+            <li><a href="index.html#news">新着情報</a></li>
+            <li><a href="index.html#shaken">車検料金表</a></li>
+            <li><a href="index.html#contact">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="service.html?id=shaken">車検・点検</a></li>
+            <li><a href="service.html?id=repair">故障修理</a></li>
+            <li><a href="service.html?id=body">鈑金・塗装</a></li>
+            <li><a href="service.html?id=sales">新車・中古車販売</a></li>
+            <li><a href="service.html?id=road">ロードサービス</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 株式会社セグチ. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="services-data.js"></script>
+  <script src="service.js"></script>
+</body>
+</html>
