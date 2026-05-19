@@ -113,7 +113,6 @@ if (!data) {
   const othersEl = document.getElementById('otherServices');
   Object.entries(SERVICES)
     .filter(([key]) => key !== id)
-    .slice(0, 8)
     .forEach(([key, svc]) => {
       othersEl.innerHTML += `
         <a href="service.html?id=${key}" class="other-service-card">
