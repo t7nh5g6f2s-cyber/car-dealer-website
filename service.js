@@ -10,6 +10,7 @@ if (!data) {
 
   document.getElementById('serviceTitle').textContent = data.title;
   document.getElementById('serviceSubtitle').textContent = data.subtitle;
+  document.getElementById('serviceHeaderIcon').textContent = data.icon;
 
   // 概要
   document.getElementById('serviceDescription').textContent = data.description;
@@ -37,6 +38,7 @@ if (!data) {
   // サービス項目グリッド
   if (data.items && data.items.length > 0) {
     document.getElementById('serviceItemsSection').style.display = 'block';
+    document.getElementById('serviceItemsTitle').textContent = data.itemsTitle || '対応サービス一覧';
     document.getElementById('serviceItemsGrid').innerHTML = data.items.map(item => `
       <div class="svc-item-card">
         <div class="svc-item-header">

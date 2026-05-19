@@ -33,9 +33,12 @@
   <div class="page-header">
     <div class="container">
       <a href="index.html" class="back-link">← ホーム</a>
-      <div class="page-header-title">
-        <h1 id="serviceTitle">読み込み中...</h1>
-        <p id="serviceSubtitle" class="service-subtitle"></p>
+      <div class="page-header-main">
+        <div class="page-header-svc-icon" id="serviceHeaderIcon"></div>
+        <div class="page-header-title">
+          <h1 id="serviceTitle">読み込み中...</h1>
+          <p id="serviceSubtitle" class="service-subtitle"></p>
+        </div>
       </div>
     </div>
   </div>
@@ -43,13 +46,13 @@
   <!-- ===== DESCRIPTION ===== -->
   <section class="service-desc-section">
     <div class="container">
-      <div class="service-desc-inner">
+      <div class="service-desc-top">
         <div class="service-description">
           <h2>サービス概要</h2>
           <p id="serviceDescription"></p>
         </div>
-        <div class="service-points" id="servicePoints"></div>
       </div>
+      <div class="service-points" id="servicePoints"></div>
     </div>
   </section>
 
@@ -65,7 +68,7 @@
     <div class="container">
       <div class="section-header">
         <div class="section-tag"><span>SERVICES</span></div>
-        <h2>対応サービス一覧</h2>
+        <h2 id="serviceItemsTitle">対応サービス一覧</h2>
       </div>
       <div class="service-items-grid" id="serviceItemsGrid"></div>
     </div>
