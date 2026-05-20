@@ -7,6 +7,7 @@
   <meta name="description" content="株式会社セグチのサービス詳細ページ" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="service.css" />
 </head>
@@ -46,7 +47,7 @@
   <!-- ===== DESCRIPTION ===== -->
   <section class="service-desc-section">
     <div class="container">
-      <div class="service-desc-top">
+      <div class="service-desc-top" data-aos="fade-up">
         <div class="service-description">
           <h2>サービス概要</h2>
           <p id="serviceDescription"></p>
@@ -66,7 +67,7 @@
   <!-- ===== ITEMS GRID ===== -->
   <section class="service-items-section" id="serviceItemsSection" style="display:none">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" data-aos="fade-up">
         <div class="section-tag"><span>SERVICES</span></div>
         <h2 id="serviceItemsTitle">対応サービス一覧</h2>
       </div>
@@ -77,7 +78,7 @@
   <!-- ===== FAQ ===== -->
   <section class="service-faq-section" id="serviceFaqSection" style="display:none">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" data-aos="fade-up">
         <div class="section-tag"><span>FAQ</span></div>
         <h2>よくあるご質問</h2>
       </div>
@@ -99,7 +100,7 @@
   <!-- ===== OTHER SERVICES ===== -->
   <section class="other-services-section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" data-aos="fade-up">
         <div class="section-tag"><span>OTHER SERVICES</span></div>
         <h2>その他のサービス</h2>
       </div>
@@ -110,7 +111,7 @@
   <!-- ===== CTA ===== -->
   <section class="service-cta-section">
     <div class="container">
-      <div class="service-cta-box">
+      <div class="service-cta-box" data-aos="fade-up">
         <div>
           <h2>お気軽にお問い合わせください</h2>
           <p>ご不明な点やお見積りのご依頼はお電話またはフォームからどうぞ。</p>
@@ -158,6 +159,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="services-data.js"></script>
   <script src="service.js"></script>
 </body>

@@ -17,9 +17,9 @@ if (!data) {
 
   // ポイント
   const pointsEl = document.getElementById('servicePoints');
-  data.points.forEach(p => {
+  data.points.forEach((p, i) => {
     pointsEl.innerHTML += `
-      <div class="point-item">
+      <div class="point-item" data-aos="fade-up" data-aos-delay="${i * 80}">
         <div class="point-text">
           <strong>${p.title}</strong>
           <p>${p.body}</p>
@@ -39,8 +39,8 @@ if (!data) {
   if (data.items && data.items.length > 0) {
     document.getElementById('serviceItemsSection').style.display = 'block';
     document.getElementById('serviceItemsTitle').textContent = data.itemsTitle || '対応サービス一覧';
-    document.getElementById('serviceItemsGrid').innerHTML = data.items.map(item => `
-      <div class="svc-item-card">
+    document.getElementById('serviceItemsGrid').innerHTML = data.items.map((item, i) => `
+      <div class="svc-item-card" data-aos="fade-up" data-aos-delay="${(i % 3) * 100}">
         <div class="svc-item-header">
           <span class="svc-item-icon">${item.icon}</span>
           <h3>${item.title}</h3>
@@ -56,8 +56,8 @@ if (!data) {
   if (data.faq && data.faq.length > 0) {
     const faqSection = document.getElementById('serviceFaqSection');
     faqSection.style.display = 'block';
-    document.getElementById('serviceFaqList').innerHTML = data.faq.map(f => `
-      <div class="faq-item">
+    document.getElementById('serviceFaqList').innerHTML = data.faq.map((f, i) => `
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="${i * 80}">
         <div class="faq-q">
           <span class="faq-icon">Q</span>
           <p>${f.q}</p>
@@ -122,6 +122,13 @@ if (!data) {
         </a>`;
     });
 }
+
+AOS.init({
+  duration: 650,
+  easing: 'ease-out-cubic',
+  once: true,
+  offset: 50,
+});
 
 // ハンバーガーメニュー
 const hamburger = document.getElementById('hamburger');
