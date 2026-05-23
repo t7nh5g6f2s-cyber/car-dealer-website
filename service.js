@@ -3,10 +3,13 @@ const id = params.get('id');
 const data = SERVICES[id];
 
 if (!data) {
-  document.getElementById('serviceTitle').textContent = 'サービスが見つかりません';
+  window.location.replace('index.html#services');
 } else {
-  // ページタイトル
+  // ページタイトル・メタ情報
   document.title = `${data.title} | 株式会社セグチ`;
+  document.querySelector('meta[name="description"]')?.setAttribute('content', data.description);
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${data.title} | 株式会社セグチ`);
+  document.querySelector('meta[property="og:description"]')?.setAttribute('content', data.description);
 
   document.getElementById('serviceTitle').textContent = data.title;
   document.getElementById('serviceSubtitle').textContent = data.subtitle;
@@ -17,15 +20,13 @@ if (!data) {
 
   // ポイント
   const pointsEl = document.getElementById('servicePoints');
-  data.points.forEach((p, i) => {
-    pointsEl.innerHTML += `
-      <div class="point-item" data-aos="fade-up" data-aos-delay="${i * 80}">
-        <div class="point-text">
-          <strong>${p.title}</strong>
-          <p>${p.body}</p>
-        </div>
-      </div>`;
-  });
+  pointsEl.innerHTML = data.points.map((p, i) => `
+    <div class="point-item" data-aos="fade-up" data-aos-delay="${i * 80}">
+      <div class="point-text">
+        <strong>${p.title}</strong>
+        <p>${p.body}</p>
+      </div>
+    </div>`).join('');
 
   // バッジ
   if (data.badges && data.badges.length > 0) {
@@ -109,18 +110,17 @@ if (!data) {
     });
   }
 
-  // その他のサービス（現在表示中を除く最大8件）
+  // その他のサービス（現在表示中を除く）
   const othersEl = document.getElementById('otherServices');
-  Object.entries(SERVICES)
+  othersEl.innerHTML = Object.entries(SERVICES)
     .filter(([key]) => key !== id)
-    .forEach(([key, svc]) => {
-      othersEl.innerHTML += `
-        <a href="service.html?id=${key}" class="other-service-card">
-          <span class="svc-icon">${svc.icon}</span>
-          <h3>${svc.title}</h3>
-          <p>${svc.subtitle}</p>
-        </a>`;
-    });
+    .map(([key, svc]) => `
+      <a href="service.html?id=${key}" class="other-service-card">
+        <span class="svc-icon">${svc.icon}</span>
+        <h3>${svc.title}</h3>
+        <p>${svc.subtitle}</p>
+      </a>`)
+    .join('');
 }
 
 AOS.init({
@@ -136,4 +136,19 @@ const navLinks = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// スムーズスクロール（ページ内リンク用）
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', e => {
+    const href = anchor.getAttribute('href');
+    if (href === '#') return;
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      const headerH = document.querySelector('header').offsetHeight;
+      const top = target.getBoundingClientRect().top + window.scrollY - headerH;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
 });

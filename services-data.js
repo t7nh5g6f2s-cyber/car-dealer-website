@@ -105,8 +105,6 @@ const SERVICES = {
         note: '※ 「—」は別途お問い合わせください。料金はすべて税込。',
       },
     ],
-    table: null,
-    tableNote: '',
   },
   repair: {
     icon: '🔧',
@@ -173,8 +171,6 @@ const SERVICES = {
       },
     ],
     tables: null,
-    table: null,
-    tableNote: '',
   },
   body: {
     icon: '🎨',
@@ -246,8 +242,6 @@ const SERVICES = {
       },
     ],
     tables: null,
-    table: null,
-    tableNote: '',
   },
   sales: {
     icon: '🚗',
@@ -317,8 +311,6 @@ const SERVICES = {
         a: '車の年式・走行距離・状態などを確認した上で査定します。他社の査定額をお持ちいただいた場合は、できる限り対応いたします。',
       },
     ],
-    table: null,
-    tableNote: '',
   },
   insurance: {
     icon: '🛡️',
@@ -372,8 +364,6 @@ const SERVICES = {
         a: 'まずはセグチまでお電話ください。保険会社への連絡代行から修理の手配まで、必要な手続きをすべてサポートします。',
       },
     ],
-    table: null,
-    tableNote: '',
   },
   special: {
     icon: '🚐',
@@ -427,8 +417,6 @@ const SERVICES = {
         a: '普通乗用車の代車はご用意しておりますが、トラックの代車は台数に限りがあります。事前にお問い合わせください。',
       },
     ],
-    table: null,
-    tableNote: '',
   },
   navi: {
     icon: '📡',
@@ -482,8 +470,6 @@ const SERVICES = {
         a: 'はい、取り外しのみのご依頼にも対応しています。取り外し後の処分もご相談ください。',
       },
     ],
-    table: null,
-    tableNote: '',
   },
   coating: {
     icon: '✨',
@@ -531,8 +517,6 @@ const SERVICES = {
         a: 'コーティングの種類によって硬化時間が異なります。施工後24時間程度は水に濡らさないようお願いする場合があります。',
       },
     ],
-    table: null,
-    tableNote: '',
   },
   glass: {
     icon: '🪟',
@@ -580,8 +564,6 @@ const SERVICES = {
         a: 'ガラス交換後は接着剤の硬化に一定時間が必要です。安全のため、施工後1〜2時間はお待ちいただく場合があります。',
       },
     ],
-    table: null,
-    tableNote: '',
   },
   road: {
     icon: '🚨',
@@ -635,8 +617,6 @@ const SERVICES = {
         a: 'トラブルの内容・現場の距離・時間帯などによって異なります。出動前にご説明いたしますので、まずはお気軽にご連絡ください。',
       },
     ],
-    table: null,
-    tableNote: '',
   },
   digital: {
     icon: '🔬',
@@ -684,8 +664,6 @@ const SERVICES = {
         a: 'コンピューターに記録されたエラーは診断できますが、電気系統以外の機械的なトラブルは目視・試運転での確認が別途必要な場合があります。',
       },
     ],
-    table: null,
-    tableNote: '',
   },
   loaner: {
     icon: '🚙',
@@ -733,7 +711,5 @@ const SERVICES = {
         a: '修理・車検の期間中はご利用いただけます。長期の修理が予想される場合は、事前にご相談ください。',
       },
     ],
-    table: null,
-    tableNote: '',
   },
 };

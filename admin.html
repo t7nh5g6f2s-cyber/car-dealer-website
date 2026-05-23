@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>営業日カレンダー管理 | 株式会社セグチ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <header class="adm-header">
+    <div class="adm-header-inner">
+      <a href="index.html" class="adm-logo">株式会社<span>セグチ</span></a>
+      <h1 class="adm-title">営業日カレンダー管理</h1>
+      <a href="index.html#contact" target="_blank" class="adm-preview-link">ホームページで確認 ↗</a>
+    </div>
+  </header>
+
+  <main class="adm-main">
+    <div class="adm-container">
+
+      <!-- Month navigation -->
+      <div class="adm-controls">
+        <button id="prevMonth" class="adm-nav-btn">‹ 前月</button>
+        <span id="monthLabel" class="adm-month-label"></span>
+        <button id="nextMonth" class="adm-nav-btn">次月 ›</button>
+        <button id="resetAll" class="adm-reset-btn">全変更をリセット</button>
+      </div>
+
+      <!-- Legend -->
+      <div class="adm-legend">
+        <span><span class="leg leg-open"></span>通常営業</span>
+        <span><span class="leg leg-closed"></span>定休（ルール）</span>
+        <span><span class="leg leg-manual-closed"></span>臨時休業（手動）</span>
+        <span><span class="leg leg-manual-open"></span>臨時営業（手動）</span>
+      </div>
+
+      <!-- Calendar -->
+      <div class="adm-cal" id="admCal"></div>
+
+      <!-- Edit panel -->
+      <div class="adm-edit-panel" id="editPanel" style="display:none">
+        <div class="edit-inner">
+          <div class="edit-row">
+            <span class="edit-date-label" id="editDateLabel"></span>
+            <span class="edit-current" id="editCurrent"></span>
+          </div>
+          <div class="edit-row edit-btns">
+            <button id="btnSetOpen"   class="edit-btn open">営業日にする</button>
+            <button id="btnSetClosed" class="edit-btn closed">定休にする</button>
+            <button id="btnReset"     class="edit-btn reset">デフォルトに戻す</button>
+          </div>
+          <div class="edit-row">
+            <label class="edit-note-label">備考（管理用メモ）</label>
+            <input type="text" id="noteInput" class="edit-note-input" placeholder="例：祝日、特別営業日" maxlength="30" />
+          </div>
+          <div class="edit-row edit-footer">
+            <button id="btnSaveNote" class="edit-btn save">メモを保存</button>
+            <button id="btnCancel"   class="edit-btn cancel">閉じる</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Override list -->
+      <div class="adm-overrides" id="admOverrides">
+        <h2 class="overrides-title">変更済みの日付</h2>
+        <div id="overridesList"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
